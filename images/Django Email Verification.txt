@@ -1,0 +1,10 @@
+PROJECT TITLE: DJANGO USER REGISTRATION WITH EMAIL CONFIRMATION LINK VERIFICATION 
+ 
+REG NO: 21B91A0469
+ 
+ABSTRACT: 
+This project focuses on developing a robust user registration system for a web application using Django, a high-level Python web framework. The primary objective is to ensure secure and reliable user authentication through email confirmation link verification. 
+Upon user registration, the system sends a confirmation email containing a unique verification link to the provided email address. The user must click this link to verify their email address and activate their account. This process helps to prevent fake registrations and ensures that the provided email addresses are valid and accessible to the users. 
+The project leverages Django's built-in authentication framework and integrates it with a custom email verification process. Key features include user registration, email sending, link generation with unique tokens, and handling of email verification requests. Security measures, such as token expiration and secure link generation, are implemented to enhance the overall security of the system. 
+By combining Django’s powerful features with custom email verification, this project aims to provide a secure and user-friendly registration system that can be easily integrated into various web applications, enhancing both security and user trust. 
+

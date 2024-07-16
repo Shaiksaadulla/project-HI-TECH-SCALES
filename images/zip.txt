@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Event Registration</h1>
+        <form id="registrationForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="event">Event:</label>
+            <select id="event" name="event" required>
+                <option value="">Select an event</option>
+                <option value="Event 1">Event 1</option>
+                <option value="Event 2">Event 2</option>
+                <option value="Event 3">Event 3</option>
+            </select>
+
+            <button type="submit">Register</button>
+        </form>
+
+        <div id="eventList">
+            <h2>Event List</h2>
+            <div id="Event 1" class="event">
+                <h3>Event 1</h3>
+                <ul></ul>
+            </div>
+            <div id="Event 2" class="event">
+                <h3>Event 2</h3>
+                <ul></ul>
+            </div>
+            <div id="Event 3" class="event">
+                <h3>Event 3</h3>
+                <ul></ul>
+            </div>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
+CSS (styles.css)
+css
+Copy code
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input, select, button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+#eventList {
+    margin-top: 20px;
+}
+
+.event {
+    margin-bottom: 20px;
+}
+
+.event h3 {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.event ul {
+    list-style: none;
+    padding: 0;
+}
+JavaScript (scripts.js)
+document.getElementById('registrationForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const selectedEvent = document.getElementById('event').value;
+
+    if (name && selectedEvent) {
+        const ul = document.getElementById(selectedEvent).querySelector('ul');
+        const li = document.createElement('li');
+        li.textContent = name;
+        ul.appendChild(li);
+
+        document.getElementById('registrationForm').reset();
+    }
+});
+import os
+import zipfile
+
+
+os.makedirs('/mnt/data/event-registration', exist_ok=True)
+
+
+with open('/mnt/data/event-registration/index.html', 'w') as file:
+    file.write("""
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Event Registration</h1>
+        <form id="registrationForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="event">Event:</label>
+            <select id="event" name="event" required>
+                <option value="">Select an event</option>
+                <option value="Event 1">Event 1</option>
+                <option value="Event 2">Event 2</option>
+                <option value="Event 3">Event 3</option>
+            </select>
+
+            <button type="submit">Register</button>
+        </form>
+
+        <div id="eventList">
+            <h2>Event List</h2>
+            <div id="Event 1" class="event">
+                <h3>Event 1</h3>
+                <ul></ul>
+            </div>
+            <div id="Event 2" class="event">
+                <h3>Event 2</h3>
+                <ul></ul>
+            </div>
+            <div id="Event 3" class="event">
+                <h3>Event 3</h3>
+                <ul></ul>
+            </div>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
+""")
+
+
+with open('/mnt/data/event-registration/styles.css', 'w') as file:
+    file.write("""
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input, select, button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+#eventList {
+    margin-top: 20px;
+}
+
+.event {
+    margin-bottom: 20px;
+}
+
+.event h3 {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.event ul {
+    list-style: none;
+    padding: 0;
+}
+""")
+
+with open('/mnt/data/event-registration/scripts.js', 'w') as file:
+    file.write("""
+document.getElementById('registrationForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const selectedEvent = document.getElementById('event').value;
+
+    if (name && selectedEvent) {
+        const ul = document.getElementById(selectedEvent).querySelector('ul');
+        const li = document.createElement('li');
+        li.textContent = name;
+        ul.appendChild(li);
+
+        document.getElementById('registrationForm').reset();
+    }
+});
+""")
+
+# Create a zip file
+zipf = zipfile.ZipFile('/mnt/data/event-registration.zip', 'w', zipfile.ZIP_DEFLATED)
+for root, dirs, files in os.walk('/mnt/data/event-registration'):
+    for file in files:
+        zipf.write(os.path.join(root, file), os.path.relpath(os.path.join(root, file), '/mnt/data/event-registration'))
+zipf.close()
